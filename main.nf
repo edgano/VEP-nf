@@ -71,13 +71,12 @@ if( serr ){
 }
 */
 
-
 log.info 'Starting workflow.....'
 
 workflow {
 
-  //bzip(params.vcf)
-  tabix(params.vcf)
+  bzip(params.vcf)
+  tabix(bzip.out.bzip)
 
   vcf_index = tabix.out.tabix
 

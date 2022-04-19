@@ -7,8 +7,13 @@
 nextflow.enable.dsl=2
 
 process bzip {
+  container "atrioinc/data-tools"
+
   input:
   path(vcf_file)
+
+  output:
+  path("*.bzip"), emit: bzip
 
   script: 
   """
