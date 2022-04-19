@@ -7,7 +7,7 @@
 nextflow.enable.dsl=2
 
 process bgzip {
-  container "docker pull stackleader/bgzip-utility"
+  container "stackleader/bgzip-utility"
 
   input:
   path(vcf_file)
