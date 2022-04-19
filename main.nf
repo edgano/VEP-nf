@@ -53,11 +53,11 @@ if( !vcfFile.exists() ) {
   exit 1, "The specified VCF file does not exist: ${params.vcf}"
 }
 
-check_bgzipped = "bgzip -t $params.vcf".execute()
+/*check_bgzipped = "bgzip -t $params.vcf".execute()
 check_bgzipped.waitFor()
 if(check_bgzipped.exitValue()){
   exit 1, "The specified VCF file is not bgzipped: ${params.vcf}"
-}
+}*/
 
 def sout = new StringBuilder(), serr = new StringBuilder()
 check_parsing = "$params.singularity_dir/vep.sif tabix -p vcf -f $params.vcf".execute()
