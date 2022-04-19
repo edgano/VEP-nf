@@ -15,6 +15,7 @@ params.vep_config=""
 params.singularity_dir=""
 
 // module imports
+include { tabix, bzip } from './nf_modules/preprocess.nf'
 include { splitVCF } from './nf_modules/split_into_chros.nf' 
 include { mergeVCF } from './nf_modules/merge_chros_VCF.nf'  
 include { chrosVEP } from './nf_modules/run_vep_chros.nf'
@@ -59,6 +60,8 @@ if(check_bgzipped.exitValue()){
   exit 1, "The specified VCF file is not bgzipped: ${params.vcf}"
 }*/
 
+
+/*
 def sout = new StringBuilder(), serr = new StringBuilder()
 check_parsing = "$params.singularity_dir/vep.sif tabix -p vcf -f $params.vcf".execute()
 check_parsing.consumeProcessOutput(sout, serr)
@@ -66,16 +69,24 @@ check_parsing.waitFor()
 if( serr ){
   exit 1, "The specified VCF file has issues in parsing: $serr"
 }
-vcf_index = "${params.vcf}.tbi"
+*/
 
-vepFile = file(params.vep_config)
-if( !vepFile.exists() ) {
-  exit 1, "The specified VEP config does not exist: ${params.vep_config}"
-}
 
 log.info 'Starting workflow.....'
 
 workflow {
+
+  //bzip(params.vcf)
+  tabix(params.vcf)
+
+  vcf_index = tabix.out.tabix
+
+  vepFile = file(params.vep_config)
+
+  if( !vepFile.exists() ) {
+    exit 1, "The specified VEP config does not exist: ${params.vep_config}"
+  }
+
   chr_str = params.chros.toString()
   chr = Channel.of(chr_str.split(','))
   splitVCF(chr, params.vcf, vcf_index)
