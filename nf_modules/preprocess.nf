@@ -6,14 +6,14 @@
 
 nextflow.enable.dsl=2
 
-process bzip {
-  container "andrewrynhard/bzip2:838c1df"
+process bgzip {
+  container "docker pull stackleader/bgzip-utility"
 
   input:
   path(vcf_file)
 
   output:
-  path("*.bzip"), emit: bzip
+  path("*.bzip"), emit: bgzip
 
   script: 
   """
