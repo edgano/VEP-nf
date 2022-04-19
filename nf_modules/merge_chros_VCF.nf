@@ -28,7 +28,8 @@ process mergeVCF {
     mode:'move'
     
   cpus params.cpus
-  container "biocontainers/bcftools:v1.5_cv3"
+  //container "biocontainers/bcftools:v1.5_cv3"
+  container "halllab/bcftools:v1.9"
 
    
   input:
