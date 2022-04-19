@@ -7,7 +7,7 @@
 nextflow.enable.dsl=2
 
 process bzip {
-  container "fithwum/debian-base"
+  container "andrewrynhard/bzip2"
 
   input:
   path(vcf_file)
@@ -22,7 +22,8 @@ process bzip {
 }
 
 process tabix {
-  container "ensemblorg/ensembl-vep"  
+  container "ensemblorg/ensembl-vep" 
+   
   input:
   path(vcf_file)
 
