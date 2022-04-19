@@ -17,7 +17,7 @@ process bgzip {
 
   script: 
   """
-    bgzip -t ${vcf_file}
+    bgzip ${vcf_file}
   """
 }
 
