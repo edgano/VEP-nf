@@ -38,7 +38,7 @@ if (params.help) {
 }
 
 params.chros = "1,2"
-params.vcf = "${workDir}/examples/clinvar-testset/input.csv"
+params.vcf = "${workDir}/examples/clinvar-testset/input.vcf"
 
 // Input validation
 if( !params.chros) {
