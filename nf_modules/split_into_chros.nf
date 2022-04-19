@@ -22,7 +22,7 @@ process splitVCF {
       2) A tabix index for that VCF
   */
   cpus params.cpus
-  container "biocontainers/bcftools"
+  container "biocontainers/bcftools:v1.5_cv3"
 
   input:
   val(chr)
