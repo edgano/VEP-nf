@@ -10,9 +10,11 @@ nextflow.enable.dsl=2
  // params default
 params.help = false
 params.cpus = 1
-params.outdir = "outdir"
-params.vep_config=""
-params.singularity_dir=""
+params.outdir = "${projectDir}/outdir"
+params.singularity_dir = "${projectDir}/singularity-images"
+params.chros = "1,2"
+params.vep_config = "${projectDir}/nf_config/vep.ini"
+params.vcf = "${projectDir}/examples/clinvar-testset/input.vcf"
 
 // module imports
 include { tabix; bgzip } from './nf_modules/preprocess.nf'
@@ -38,9 +40,6 @@ if (params.help) {
   exit 1
 }
 
-params.chros = "1,2"
-params.vcf = "${projectDir}/examples/clinvar-testset/input.vcf"
-
 // Input validation
 if( !params.chros) {
   exit 1, "Undefined --chros parameter. Please provide a comma-separated string with chromosomes: 1,2, ... Default: 1,2,...,X,Y,MT"
@@ -53,23 +52,6 @@ vcfFile = file(params.vcf)
 if( !vcfFile.exists() ) {
   exit 1, "The specified VCF file does not exist: ${params.vcf}"
 }
-
-/*check_bgzipped = "bgzip -t $params.vcf".execute()
-check_bgzipped.waitFor()
-if(check_bgzipped.exitValue()){
-  exit 1, "The specified VCF file is not bgzipped: ${params.vcf}"
-}*/
-
-
-/*
-def sout = new StringBuilder(), serr = new StringBuilder()
-check_parsing = "$params.singularity_dir/vep.sif tabix -p vcf -f $params.vcf".execute()
-check_parsing.consumeProcessOutput(sout, serr)
-check_parsing.waitFor()
-if( serr ){
-  exit 1, "The specified VCF file has issues in parsing: $serr"
-}
-*/
 
 log.info 'Starting workflow.....'
 
