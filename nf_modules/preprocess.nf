@@ -7,7 +7,7 @@
 nextflow.enable.dsl=2
 
 process bzip {
-  container "andrewrynhard/bzip2"
+  container "andrewrynhard/bzip2:838c1df"
 
   input:
   path(vcf_file)
@@ -23,7 +23,7 @@ process bzip {
 
 process tabix {
   container "ensemblorg/ensembl-vep" 
-   
+
   input:
   path(vcf_file)
 
