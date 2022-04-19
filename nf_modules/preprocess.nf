@@ -13,7 +13,7 @@ process bgzip {
   path(vcf_file)
 
   output:
-  path("*.bzip"), emit: bgzip
+  path("*.vcf.gz"), emit: bgzip
 
   script: 
   """
