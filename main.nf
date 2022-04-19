@@ -81,14 +81,16 @@ workflow {
   vcf_index = tabix.out.tabix
 
   vepFile = file(params.vep_config)
-
   if( !vepFile.exists() ) {
     exit 1, "The specified VEP config does not exist: ${params.vep_config}"
   }
 
   chr_str = params.chros.toString()
   chr = Channel.of(chr_str.split(','))
+
   splitVCF(chr, bgzip.out.bgzip, vcf_index)
+
   chrosVEP(splitVCF.out, params.vep_config)
+
   mergeVCF(chrosVEP.out.vcfFile.collect(), chrosVEP.out.indexFile.collect())
 }  
