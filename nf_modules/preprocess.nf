@@ -7,7 +7,7 @@
 nextflow.enable.dsl=2
 
 process bzip {
-  container "atrioinc/data-tools"
+  container "fithwum/debian-base"
 
   input:
   path(vcf_file)
