@@ -15,7 +15,7 @@ params.vep_config=""
 params.singularity_dir=""
 
 // module imports
-include { tabix, bzip } from './nf_modules/preprocess.nf'
+include { tabix; bzip } from './nf_modules/preprocess.nf'
 include { splitVCF } from './nf_modules/split_into_chros.nf' 
 include { mergeVCF } from './nf_modules/merge_chros_VCF.nf'  
 include { chrosVEP } from './nf_modules/run_vep_chros.nf'
