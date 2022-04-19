@@ -28,7 +28,7 @@ process mergeVCF {
     mode:'move'
     
   cpus params.cpus
-  container "${params.singularity_dir}/bcftools.sif"
+  container "biocontainers/bcftools"
 
    
   input:
