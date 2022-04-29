@@ -7,20 +7,14 @@
 
 nextflow.enable.dsl=2
 
- // params default
-params.help = false
-params.cpus = 1
-params.outdir = "${projectDir}/outdir"
-params.singularity_dir = "${projectDir}/singularity-images"
-params.chros = "1,2"
-params.vep_config = "${projectDir}/nf_config/vep.ini"
-params.vcf = "${projectDir}/examples/clinvar-testset/input.vcf"
-
 // module imports
 include { tabix; bgzip } from './nf_modules/preprocess.nf'
 include { splitVCF } from './nf_modules/split_into_chros.nf' 
 include { mergeVCF } from './nf_modules/merge_chros_VCF.nf'  
 include { chrosVEP } from './nf_modules/run_vep_chros.nf'
+
+// params default
+parmas.help = false
 
  // print usage
 if (params.help) {
