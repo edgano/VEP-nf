@@ -18,57 +18,38 @@
                 "vcf": {
                     "type": "string",
                     "default": "${projectDir}/examples/clinvar-testset/input.vcf",
+                    "description": "VCF that will be split. Currently supports sorted and bgzipped file",
                     "fa_icon": "fas fa-angle-double-right"
                 },
                 "chros": {
                     "type": "string",
+                    "description": "LIST OF CHROS	Comma separated list of chromosomes to generate",
                     "default": "1,2",
                     "fa_icon": "fas fa-angle-double-right"
                 },
                 "vep_config": {
                     "type": "string",
-                    "default": null,
+                    "description": "VEP config file. Default: nf_config/vep.ini",
+                    "default": "${projectDir}/nf_config/vep.ini",
                     "fa_icon": "fas fa-code"
                 },
                 "outdir": {
                     "type": "string",
                     "format": "directory-path",
                     "description": "The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.",
-                    "fa_icon": "fas fa-broom",
+                    "fa_icon": "fas fa-folder-open",
                     "default": "${projectDir}/outdir"
-                }
-            }
-        },
-        "generic_options": {
-            "title": "Generic options",
-            "type": "object",
-            "fa_icon": "fas fa-file-import",
-            "description": "Less common options for the pipeline, typically set in a config file.",
-            "help_text": "These options are common to all nf-core pipelines and allow you to customise some of the core preferences for how the pipeline runs.\n\nTypically these options would be set in a Nextflow config file loaded for all pipeline runs, such as `~/.nextflow/config`.",
-            "properties": {
+                },
                 "singularity_dir": {
                     "type": "string",
                     "default": null
                 },
                 "cpus": {
-                    "type": "string",
-                    "default": null
-                },
-                "help": {
-                    "type": "boolean",
-                    "description": "Display help text.",
-                    "fa_icon": "fas fa-question-circle",
-                    "hidden": true
+                    "type": "integer",
+                    "description": "Number of CPUs to use.",
+                    "default": 1
                 }
             }
         }
-    },
-    "allOf": [
-        {
-            "$ref": "#/definitions/input_output_options"
-        },
-        {
-            "$ref": "#/definitions/generic_options"
-        }
-    ]
+    }
 }
