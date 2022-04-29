@@ -51,7 +51,8 @@ log.info 'Starting workflow.....'
 
 workflow {
 
-  bgzip(params.vcf)
+  bgzip(vcfFile)
+
   tabix(bgzip.out.bgzip)
 
   vcf_index = tabix.out.tabix
