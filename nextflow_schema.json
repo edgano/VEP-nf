@@ -23,7 +23,7 @@
                 },
                 "chros": {
                     "type": "string",
-                    "description": "LIST OF CHROS	Comma separated list of chromosomes to generate",
+                    "description": "LIST OF CHROS, Comma-separated list of chromosomes to generate",
                     "default": "1,2",
                     "fa_icon": "fas fa-angle-double-right"
                 },
