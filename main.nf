@@ -14,7 +14,7 @@ include { mergeVCF } from './nf_modules/merge_chros_VCF.nf'
 include { chrosVEP } from './nf_modules/run_vep_chros.nf'
 
 // params default
-parmas.help = false
+params.help = false
 
  // print usage
 if (params.help) {
