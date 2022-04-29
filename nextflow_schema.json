@@ -17,7 +17,6 @@
             "properties": {
                 "vcf": {
                     "type": "string",
-                    "default": "${projectDir}/examples/clinvar-testset/input.vcf",
                     "fa_icon": "fas fa-angle-double-right"
                 },
                 "chros": {
@@ -27,7 +26,7 @@
                 },
                 "cpus": {
                     "type": "integer",
-                    "description": "Number of CPUs to use.",
+                    "description": "Number of CPUs to use."
                 },
                 "vep_config": {
                     "type": "string",
@@ -36,13 +35,14 @@
                 },
                 "singularity_dir": {
                     "type": "string",
-                    "fa_icon": "fas fa-folder-open",
+                    "format": "directory-path",
+                    "fa_icon": "fas fa-folder-open"
                 },
                 "outdir": {
                     "type": "string",
                     "format": "directory-path",
                     "description": "The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.",
-                    "fa_icon": "fas fa-folder-open",
+                    "fa_icon": "fas fa-folder-open"
                 }
             }
         }
