@@ -17,11 +17,13 @@
             "properties": {
                 "vcf": {
                     "type": "string",
+                    "default": "${projectDir}/examples/clinvar-testset/input.vcf",
                     "fa_icon": "fas fa-angle-double-right"
                 },
                 "chros": {
-                    "type": "string",
+                    "type": "string",                    
                     "description": "LIST OF CHROS, Comma-separated list of chromosomes to generate",
+                    "default": "1,2",
                     "fa_icon": "fas fa-angle-double-right"
                 },
                 "cpus": {
@@ -31,17 +33,14 @@
                 "vep_config": {
                     "type": "string",
                     "description": "VEP config file. Default: nf_config/vep.ini",
+                    "default": "${projectDir}/nf_config/vep.ini",
                     "fa_icon": "fas fa-code"
-                },
-                "singularity_dir": {
-                    "type": "string",
-                    "format": "directory-path",
-                    "fa_icon": "fas fa-folder-open"
                 },
                 "outdir": {
                     "type": "string",
                     "format": "directory-path",
                     "description": "The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.",
+                    "default": "${projectDir}/outdir",
                     "fa_icon": "fas fa-folder-open"
                 },
                 "singularity_use_pre_cached_images": {
