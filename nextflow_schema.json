@@ -96,13 +96,13 @@
                 "trace": {
                     "type": "object",
                     "properties": {
-                        "enabled": { "title": "enabled", "type": "boolean", "default": false },
+                        "enabled": { "title": "enabled", "type": "boolean", "default": false }
                     }
                 },
                 "dag": {
                     "type": "object",
                     "properties": {
-                        "enabled": { "title": "enabled", "type": "boolean", "default": false },
+                        "enabled": { "title": "enabled", "type": "boolean", "default": false }
                     }
                 }
             }
