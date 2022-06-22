@@ -17,10 +17,10 @@ include { chrosVEP } from './nf_modules/run_vep_chros.nf'
 params.help = false
 
 // trick to decide reports from tower
-timeline.enabled = { params.timeline.enabled }
-report.enabled = { params.report.enabled }
-trace.enabled = { params.trace.enabled }
-dag.enabled = { params.dag.enabled }
+timeline.enabled = { params.timeline_enabled }
+report.enabled = { params.report_enabled }
+trace.enabled = { params.trace_enabled }
+dag.enabled = { params.dag_enabled }
 
 
  // print usage
