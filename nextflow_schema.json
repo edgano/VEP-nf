@@ -83,7 +83,7 @@
             "title": "Selection of the reports",
             "type": "object",
             "fa_icon": "fas fa-chart-user",
-            "description": "",
+            "description": "Define which reports will be generated for the run",
             "properties": {
                 "timeline_enabled": {
                     "type": "boolean",
