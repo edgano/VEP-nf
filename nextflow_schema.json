@@ -82,7 +82,7 @@
         "Reports": {
             "title": "Selection of the reports",
             "type": "object",
-            "fa_icon": "fas fa-chart-user,
+            "fa_icon": "fas fa-chart-user",
             "description": "",
             "properties": {
                 "timeline_enabled": {
