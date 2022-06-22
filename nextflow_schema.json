@@ -37,8 +37,7 @@
                     "fa_icon": "fas fa-gears",
                     "type": "string",
                     "description": "VEP config file. Default: nf_config/vep.ini",
-                    "default": "${projectDir}/nf_config/vep.ini",
-                    "fa_icon": "fas fa-code"
+                    "default": "${projectDir}/nf_config/vep.ini"
                 },
                 "outdir": {
                     "fa_icon": "fas fa-folder-open",
@@ -46,7 +45,6 @@
                     "format": "directory-path",
                     "description": "The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.",
                     "default": "${projectDir}/outdir"
-                    
                 },
                 "reportdir": {
                     "fa_icon": "fas fa-folder-open",
