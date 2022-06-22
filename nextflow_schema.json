@@ -59,12 +59,6 @@
                     "description": "The output directory where the trace reports will be saved. You have to use absolute paths to storage on Cloud infrastructure.",
                     "default": "${projectDir}/tracedir"
                 },
-                "singularity_use_pre_cached_images": {
-                    "fa_icon": "fas fa-container-storage",
-                    "type": "boolean",
-                    "description": "Decide to use or not cached images",
-                    "default": false
-                },
                 "email_on_complete": {
                     "fa_icon": "fas fa-envelope",
                     "type": "string",
