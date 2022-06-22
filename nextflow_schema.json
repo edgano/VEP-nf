@@ -16,54 +16,52 @@
             ],
             "properties": {
                 "vcf": {
-                    "fa_icon": "fas fa-file",
-                    "type": "string",
                     "description": "VCF that will be split. Currently supports sorted and bgzipped file",
-                    "default": "${projectDir}/examples/clinvar-testset/input.vcf"
-                    
+                    "type": "string",
+                    "default": "${projectDir}/examples/clinvar-testset/input.vcf",
+                    "fa_icon": "fas fa-angle-double-right"
                 },
                 "chros": {
-                    "fa_icon": "fas fa-dna",
                     "type": "string",                    
                     "description": "Comma-separated list of chromosomes to generate",
-                    "default": "1,2"
+                    "default": "1,2",
+                    "fa_icon": "fas fa-angle-double-right"
                 },
                 "cpus": {
-                    "fa_icon": "fas fa-microchip",
                     "type": "integer",
                     "description": "Number of CPUs to use."
                 },
                 "vep_config": {
-                    "fa_icon": "fa-duotone fa-gears",
                     "type": "string",
                     "description": "VEP config file. Default: nf_config/vep.ini",
-                    "default": "${projectDir}/nf_config/vep.ini"
+                    "default": "${projectDir}/nf_config/vep.ini",
+                    "fa_icon": "fas fa-code"
                 },
                 "outdir": {
-                    "fa_icon": "fas fa-folder-open",
                     "type": "string",
                     "format": "directory-path",
                     "description": "The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.",
-                    "default": "${projectDir}/outdir"
+                    "default": "${projectDir}/outdir",
+                    "fa_icon": "fas fa-folder-open"
                 },
                 "reportdir": {
-                    "fa_icon": "fas fa-folder-open",
                     "type": "string",
                     "format": "directory-path",
                     "description": "The output directory where the reports will be saved. You have to use absolute paths to storage on Cloud infrastructure.",
-                    "default": "${projectDir}/reportdir"
+                    "default": "${projectDir}/reportdir",
+                    "fa_icon": "fas fa-folder-open"
                 },
                 "tracedir": {
-                    "fa_icon": "fas fa-folder-open",
                     "type": "string",
                     "format": "directory-path",
                     "description": "The output directory where the trace reports will be saved. You have to use absolute paths to storage on Cloud infrastructure.",
-                    "default": "${projectDir}/tracedir"
+                    "default": "${projectDir}/tracedir",
+                    "fa_icon": "fas fa-folder-open"
                 },
                 "singularity_use_pre_cached_images": {
                     "type": "boolean",
                     "description": "Decide to use or not cached images",
-                    "default": true
+                    "default": false
                 },
                 "email_on_complete": {
                     "type": "string",
@@ -74,6 +72,38 @@
                     "type": "string",
                     "description": "An email address to send a summary email to when the pipeline is completed - ONLY sent if the pipeline does not exit successfully.",
                     "default": ""
+                }
+            }
+        },
+        "Reports": {
+            "title": "Selection of the reports",
+            "type": "object",
+            "fa_icon": "fas fa-terminal",
+            "description": "",
+            "properties": {
+                "timeline": {
+                    "type": "object",
+                    "properties": {
+                        "enabled": { "title": "enabled", "type": "boolean", "default": false }
+                    }
+                },
+                "report": {
+                    "type": "object",
+                    "properties": {
+                        "enabled": { "title": "enabled", "type": "boolean", "default": false }
+                    }
+                },
+                "trace": {
+                    "type": "object",
+                    "properties": {
+                        "enabled": { "title": "enabled", "type": "boolean", "default": false }
+                    }
+                },
+                "dag": {
+                    "type": "object",
+                    "properties": {
+                        "enabled": { "title": "enabled", "type": "boolean", "default": false }
+                    }
                 }
             }
         }
