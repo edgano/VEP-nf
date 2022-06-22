@@ -26,7 +26,7 @@
                     "fa_icon": "fas fa-dna",
                     "type": "string",                    
                     "description": "Comma-separated list of chromosomes to generate",
-                    "default": "1,2",
+                    "default": "1,2"
                 },
                 "cpus": {
                     "fa_icon": "fas fa-microchip",
