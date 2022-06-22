@@ -81,29 +81,21 @@
             "fa_icon": "fas fa-terminal",
             "description": "",
             "properties": {
-                "timeline": {
-                    "type": "object",
-                    "properties": {
-                        "enabled": { "title": "enabled", "type": "boolean", "default": false }
-                    }
+                "timeline_enabled": {
+                    "type": "boolean",
+                    "default": true
                 },
-                "report": {
-                    "type": "object",
-                    "properties": {
-                        "enabled": { "title": "enabled", "type": "boolean", "default": false }
-                    }
+                "report_enabled": {
+                    "type": "boolean",
+                    "default": true
                 },
-                "trace": {
-                    "type": "object",
-                    "properties": {
-                        "enabled": { "title": "enabled", "type": "boolean", "default": false }
-                    }
+                "trace_enabled": {
+                    "type": "boolean",
+                    "default": true
                 },
-                "dag": {
-                    "type": "object",
-                    "properties": {
-                        "enabled": { "title": "enabled", "type": "boolean", "default": false }
-                    }
+                "dag_enabled": {
+                    "type": "boolean",
+                    "default": true
                 }
             }
         }
