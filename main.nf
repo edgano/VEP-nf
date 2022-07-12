@@ -14,8 +14,23 @@ include { mergeVCF } from './nf_modules/merge_chros_VCF.nf'
 include { chrosVEP } from './nf_modules/run_vep_chros.nf'
 
 // params default
+params.header = true
 params.help = false
 
+// print variables
+if (params.header) {
+log.info """\
+         R E G R E S S I V E   M S A   A n a l y s i s  ~  version 0.1"
+         ======================================="
+         VCF that will be split                                           : ${params.vcf}
+         VEP config file                                                  : ${params.vep_config}
+         LIST_OF_CHROS	Comma-separated list of chromosomes to generate    : ${params.chros}
+         Number of CPUs to use                                            : ${params.cpu}
+         Name of output dir (DIRECTORY)                                   : ${params.output}
+         """
+         .stripIndent()
+ }
+ 
  // print usage
 if (params.help) {
   log.info ''
