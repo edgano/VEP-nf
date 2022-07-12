@@ -20,7 +20,7 @@ params.help = false
 // print variables
 if (params.header) {
 log.info """\
-         R E G R E S S I V E   M S A   A n a l y s i s  ~  version 0.1"
+         V E P - ENSEMBL"
          ======================================="
          VCF that will be split                                           : ${params.vcf}
          VEP config file                                                  : ${params.vep_config}
