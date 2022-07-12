@@ -22,11 +22,11 @@ if (params.header) {
 log.info """\
          V E P - ENSEMBL"
          ======================================="
-         VCF that will be split                                           : ${params.vcf}
-         VEP config file                                                  : ${params.vep_config}
-         LIST_OF_CHROS	Comma-separated list of chromosomes to generate    : ${params.chros}
-         Number of CPUs to use                                            : ${params.cpu}
-         Name of output dir (DIRECTORY)                                   : ${params.output}
+         VCF that will be split                                                  : ${params.vcf}
+         VEP config file                                                         : ${params.vep_config}
+         LIST_OF_CHROS	Comma-separated list of chromosomes to generate       : ${params.chros}
+         Number of CPUs to use                                                   : ${params.cpus}
+         Name of outdir dir (DIRECTORY)                                          : ${params.outdir}
          """
          .stripIndent()
  }
